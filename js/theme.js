@@ -9,23 +9,21 @@ document.addEventListener('DOMContentLoaded', function() {
             updateControlButtons();
         },
     });
+});
 
     function updateControlButtons() {
-        var prevButton = document.querySelector('.tns-controls button[data-controls="prev"]');
-        var nextButton = document.querySelector('.tns-controls button[data-controls="next"]');
-
-        fetch('./images/prev.svg')
-        .then(response => response.text())
-        .then(data => {
-            prevButton.innerHTML = data;
-        })
-        .catch(error => console.error('Error loading SVG:', error));
-
-        fetch('./images/next.svg')
-        .then(response => response.text())
-        .then(data => {
-            nextButton.innerHTML = data;
-        })
-        .catch(error => console.error('Error loading SVG:', error));
+        getSvgBySelector('.tns-controls button[data-controls="prev"]','./images/prev.svg');
+        getSvgBySelector('.tns-controls button[data-controls="next"]','./images/next.svg');
     }
-});
+
+    function getSvgBySelector(selector, path){
+        var Button = document.querySelector(selector);
+
+        if(Button){
+            fetch(path)
+            .then(response => response.text())
+            .then(data => {
+                Button.innerHTML = data;
+            })
+        }
+    } 
