@@ -4,7 +4,7 @@ Korzystając z repozytorium utwórz prostą karuzelę produktowa na wzór poniż
 
 **Założenia:**
 
-1. Przed wykonaniem czynności należy zainstalować zależności composer.
+ 1. Przed wykonaniem czynności należy zainstalować zależności composer.
  2. Produkty przechowywane są w tablicy „products&quot;
  3. Karuzela oparta powinna być o bibliotekę „Tiny Slider 2&quot;
  4. Ceny produktowe mają być formatowane za pomocą funkcji „displayPrice&quot;, która w parametrze przyjmuje wartość „price&quot;
